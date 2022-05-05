@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { fetchUsers } from '../users-rtk/UsersService';
-import { useLoading } from './loadingHook';
+import { useLoading } from '../../hooks/loadingHook';
 
 export type UsersListProps = {
 };

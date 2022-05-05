@@ -1,64 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
-import { UsersListRtk } from './features/users-rtk/UsersListRtk';
-import {UsersList} from "./features/users-loading-hook/UsersList";
+import React, { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { UserList1Example1 } from './examples/AUserList1Example1';
+import { UserList1Example2 } from './examples/AUserList1Example2';
+import { UserList2Example1 } from './examples/AUserList2Example1';
+import { BUserList1Example3 } from './examples/BUserList1Example3';
+import { BUserList1Example4 } from './examples/BUserList1Example4';
+import { BUserList2Example1 } from './examples/BUserList2Example1';
 
+
+
+const queryClient = new QueryClient();
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
 
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
 
-        <UsersListRtk/>
+        <p style={{ padding: 20 }}>nb. Refresh page between use of each demo, as they all share the same "database"</p>
 
-        <UsersList/>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+        <UserList1Example1 />
+
+        <UserList1Example2 />
+
+        <UserList2Example1 />
+        
+        <BUserList1Example3/>
+        <BUserList1Example4/>
+        <BUserList2Example1/>
+
+      </div>
+    </QueryClientProvider>
   );
 }
 
