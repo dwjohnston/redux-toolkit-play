@@ -97,9 +97,7 @@ const { slice, thunks: _thunks } = davidsCreateSlice("user2", initialState, [
     asyncFn: createUser,
 
     fulfilled: (state, action) => {
-      console.log(action.payload);
       state.users = [...state.users.filter((v) => v.id !== action.meta.arg.id), action.payload];
-      console.log(state);
 
       return state; 
     }
@@ -116,10 +114,7 @@ const { slice, thunks: _thunks } = davidsCreateSlice("user2", initialState, [
     },
     fulfilled: (state, action) => {
 
-      console.log("gets here");
-      console.log(action);
       state.users = state.users.filter((v) => v.id !== action.meta.arg.id);
-      console.log(state.users);
       state.loadingRows = state.loadingRows.filter((v) => v !== action.meta.arg.id)
 
       return state; 

@@ -16,7 +16,6 @@ export const CUserList2Example2 = (props: UserList1Example1Props) => {
     const { } = props;
 
     const {isLoading, users, createUser, deleteUser, editUser, loadingRows} = useRtkUsers(); 
-    console.log(isLoading, loadingRows);
     return (
         <Example title = "UserList2Example2 - RTK">
 

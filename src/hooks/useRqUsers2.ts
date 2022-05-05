@@ -92,8 +92,6 @@ export function useRqUsers2() : {
 
         onSuccess: async (response, user) => {
             queryClient.setQueryData<Array<User>>('users', (old = []) => {
-
-                console.log(old, response, user); 
                return old.filter((v) => v.id !== user.id); 
             })
         },

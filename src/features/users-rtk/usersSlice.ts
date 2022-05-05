@@ -65,7 +65,6 @@ export const counterSlice = createSlice({
         state.users = action.payload;
       }).addCase(asyncCreateUser.fulfilled, (state, action) => {
 
-        console.log(state);
         state.users = [...state.users, action.payload]
       })
       .addCase(asyncDeleteUser.pending, (state, action) => {

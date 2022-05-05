@@ -84,7 +84,6 @@ export const UserList2Example1 = (props: UserList1Example2Props) => {
                 users={fetchAllUsersBundle.result}
                 onCreateUser={createUserBundle.loadingFn}
                 onDeleteUser={(user) => {
-                    console.log("call");
                     deleteUserBundle.loadingFn(user.id, user);
 
                 }}

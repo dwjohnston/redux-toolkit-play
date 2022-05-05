@@ -41,7 +41,6 @@ export const UserList2 = (props: UserListProps) => {
 
 
     const [editPackage, setEditPackage] = useState<EditPackage | null>(null);
-    console.log(loadingRows);
     return (
         <div>
 
@@ -54,7 +53,6 @@ export const UserList2 = (props: UserListProps) => {
 
 
                     const isLoading = loadingRows.includes(user.id);
-                    console.log(isLoading);
                     return <ListItem key={user.id}>
 
                         {isLoading && <CircularProgress size="1em" />}
