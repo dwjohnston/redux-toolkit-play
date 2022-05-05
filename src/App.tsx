@@ -6,6 +6,10 @@ import { UserList2Example1 } from './examples/AUserList2Example1';
 import { BUserList1Example3 } from './examples/BUserList1Example3';
 import { BUserList1Example4 } from './examples/BUserList1Example4';
 import { BUserList2Example1 } from './examples/BUserList2Example1';
+import { CUserList1Example1 } from './examples/CUserList1Example1';
+import { CUserList1Example2 } from './examples/CUserList1Example2';
+import { CUserList2Example1 } from './examples/CUserList2Example1';
+import { CUserList2Example2 } from './examples/CUserList2Example2';
 
 
 
@@ -29,6 +33,13 @@ function App() {
         <BUserList1Example3/>
         <BUserList1Example4/>
         <BUserList2Example1/>
+
+        <CUserList1Example1/>
+        <CUserList1Example2/>
+        <CUserList2Example1/>
+        <CUserList2Example2/>
+
+
 
       </div>
     </QueryClientProvider>
