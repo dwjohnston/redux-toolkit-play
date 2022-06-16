@@ -46,7 +46,13 @@ export const widgetSlice = createSlice({
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
         addWidget: (state, action: PayloadAction<Widget>) => {
-            state.widgets[action.payload.id] = action.payload; 
+            return {
+                ...state,
+                widgets: {
+                    ...state.widgets,
+                    [action.payload.id]: action.payload
+                }
+            }
         }
     },
     // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -93,12 +99,12 @@ export const useWidgets = (): WidgetsHooks => {
     const allWidgets = useAppSelector((store) => {
         return Object.values(store.widgets.widgets);
     })
-        return {
-            getWidgetById,
-            widgets: allWidgets,
-            addWidget: (widget) => {
+    return {
+        getWidgetById,
+        widgets: allWidgets,
+        addWidget: (widget) => {
 
-                dispatch(widgetSlice.actions.addWidget(widget));
-            }
+            dispatch(widgetSlice.actions.addWidget(widget));
         }
     }
+}
