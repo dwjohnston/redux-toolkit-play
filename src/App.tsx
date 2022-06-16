@@ -10,6 +10,8 @@ import { CUserList1Example1 } from './examples/CUserList1Example1';
 import { CUserList1Example2 } from './examples/CUserList1Example2';
 import { CUserList2Example1 } from './examples/CUserList2Example1';
 import { CUserList2Example2 } from './examples/CUserList2Example2';
+import { MainContext } from './perfExamples/context-solution/WidgetsContextComponents';
+import { MainRedux } from './perfExamples/context-solution/WidgetsReduxComponents';
 
 
 
@@ -19,30 +21,35 @@ function App() {
 
   return (
 
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
+    // <QueryClientProvider client={queryClient}>
+    //   <div className="App">
 
-        <p style={{ padding: 20 }}>nb. Refresh page between use of each demo, as they all share the same "database"</p>
+    //     <p style={{ padding: 20 }}>nb. Refresh page between use of each demo, as they all share the same "database"</p>
 
-        <UserList1Example1 />
+    //     <UserList1Example1 />
 
-        <UserList1Example2 />
+    //     <UserList1Example2 />
 
-        <UserList2Example1 />
-        
-        <BUserList1Example3/>
-        <BUserList1Example4/>
-        <BUserList2Example1/>
+    //     <UserList2Example1 />
 
-        <CUserList1Example1/>
-        <CUserList1Example2/>
-        <CUserList2Example1/>
-        <CUserList2Example2/>
+    //     <BUserList1Example3/>
+    //     <BUserList1Example4/>
+    //     <BUserList2Example1/>
+
+    //     <CUserList1Example1/>
+    //     <CUserList1Example2/>
+    //     <CUserList2Example1/>
+    //     <CUserList2Example2/>
 
 
 
-      </div>
-    </QueryClientProvider>
+    //   </div>
+    // </QueryClientProvider>
+
+    <>
+      <MainContext />
+      <MainRedux />
+    </>
   );
 }
 
